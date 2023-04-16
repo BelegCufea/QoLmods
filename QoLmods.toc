@@ -1,0 +1,15 @@
+## Interface: 100007
+## Title: QoL modules
+## Notes: Simple quality of life modules
+## Version: 0.0.1
+## Author: Cufea
+## SavedVariables: QoLmodsDB
+## DefaultState: enabled
+
+libs\libs.xml
+
+const.lua
+debug.lua
+QoLmods.lua
+
+modules\modules.xml
