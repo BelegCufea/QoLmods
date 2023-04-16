@@ -3,4 +3,5 @@
 	<Script file="modules\LowerCaps.lua" />
 	<Script file="modules\StickyTargeting.lua" />
 	<Script file="modules\TimeToArrive.lua" />
+	<Script file="modules\UnlimitedDistance.lua" />
 </Ui>

@@ -30,6 +30,7 @@
         "LE_LFG_CATEGORY_LFD",
         "ADD",
         "SlashCmdList",
-        "hash_SlashCmdList"
+        "hash_SlashCmdList",
+        "SuperTrackedFrame"
     ]
 }
