@@ -84,5 +84,5 @@ function Module:OnInitialize()
 end
 
 function Module:Info()
-	return "Adds a feature to supertracker showing an estimated time of arrival. It will display the time it will take for you to reach your destination based on your current speed and distance to travel. This can be especially useful for long journeys, giving you a better idea of when you will arrive at your destination."
+	return "Adds a feature to map pins showing an estimated time of arrival. It will display the time it will take for you to reach your destination based on your current speed and distance to travel. This can be especially useful for long journeys, giving you a better idea of when you will arrive at your destination."
 end

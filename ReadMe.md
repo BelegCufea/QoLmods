@@ -16,7 +16,7 @@ Adds a feature to map pins showing an estimated time of arrival. It will display
 
 ### Unlimited distance for map pins
 
-Removes the 1000 yards limit put on map pins.
+Removes the 1000 yards limit on map pins. Also removes units and formats distance
 
 ### Lower Caps
 
