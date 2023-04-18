@@ -27,8 +27,7 @@ function Module:OnEnable()
         SuperTrackedFrame.DistanceText,
         "SetText",
         function(frame, text)
-            local distance = BreakUpLargeNumbers(C_Navigation:GetDistance())
-            frame:__UDSetText(distance)
+            frame:__UDSetText(BreakUpLargeNumbers(C_Navigation:GetDistance()))
         end)
 end
 

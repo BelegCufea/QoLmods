@@ -16,6 +16,10 @@ local string = _G.string
 
 local TimeToArrive
 local elapsed
+local speed
+local distance
+local currentDistance
+local instanceType
 
 local function setTime(distance, speed)
     if speed and speed > 0 then
@@ -30,17 +34,17 @@ local function setTime(distance, speed)
 end
 
 local function timeToArrive()
-    local _, instanceType = IsInInstance()
+    _, instanceType = IsInInstance()
     if (C_Map.HasUserWaypoint() == true or C_SuperTrack.IsSuperTrackingAnything() == true) and (instanceType == "none") then
         TimeToArrive:SetScript("OnUpdate", function(_, dt)
             elapsed = elapsed + dt
             if elapsed >= 1 then
                 elapsed = 0
-                local speed = GetUnitSpeed("player") or GetUnitSpeed("vehicle")
-                local distance = C_Navigation.GetDistance()
+                speed = GetUnitSpeed("player") or GetUnitSpeed("vehicle")
+                distance = C_Navigation.GetDistance()
                 if not speed or speed == 0 then -- delta
                     C_Timer.After(1, function()
-                        local currentDistance = C_Navigation.GetDistance()
+                        currentDistance = C_Navigation.GetDistance()
                         speed = math.abs(currentDistance - distance)
                         setTime(currentDistance, speed)
                     end)
