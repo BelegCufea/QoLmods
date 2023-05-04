@@ -31,6 +31,18 @@
         "ADD",
         "SlashCmdList",
         "hash_SlashCmdList",
-        "SuperTrackedFrame"
+        "SuperTrackedFrame",
+        "IsSecureCmd",
+        "SLASH_USE1",
+        "CLOSE",
+        "GameFontDisableSmall",
+        "GameTooltip",
+        "GameFontNormalSmall",
+        "ChatFontNormal",
+        "OKAY",
+        "ColorPickerFrame",
+        "OpacitySliderFrame",
+        "NOT_BOUND",
+        "SetDesaturation"
     ]
 }

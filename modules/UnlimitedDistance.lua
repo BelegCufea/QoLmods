@@ -1,7 +1,7 @@
 local moduleName = "Unlimited distance"
 
 local QoLmods = select(2, ...)
-local Module = QoLmods:NewModule(moduleName, "AceEvent-3.0", "AceHook-3.0")
+local Module = QoLmods:NewModule(moduleName, "AceHook-3.0")
 
 local C_Navigation = C_Navigation
 local SuperTrackedFrame = SuperTrackedFrame

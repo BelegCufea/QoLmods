@@ -82,7 +82,7 @@ function Module:OnInitialize()
     TimeToArrive.TimeText = TimeToArrive:CreateFontString(nil, "BACKGROUND", "GameFontNormal")
     TimeToArrive.TimeText:SetJustifyV("TOP")
     TimeToArrive.TimeText:SetSize(0, 26)
-    TimeToArrive.TimeText:SetPoint("TOP", "SuperTrackedFrame", "BOTTOM", 0, -40)
+    TimeToArrive.TimeText:SetPoint("TOP", _G["SuperTrackedFrame"].Icon, "BOTTOM", 0, -26)
     TimeToArrive.TimeText:SetParent(_G["SuperTrackedFrame"])
     TimeToArrive:SetParent(_G["SuperTrackedFrame"])
 end
