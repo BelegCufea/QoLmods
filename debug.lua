@@ -5,18 +5,23 @@ QoLmods.DEBUG = DEBUG
 
 local Const = QoLmods.CONST
 
-function DEBUG:Info(value, name, type)
-    if not QoLmods.db.profile.Debug then return end
+function DEBUG:Info(value, name)
+    if not Addon.db.profile.Debug then return end
     if not name then name = Const.METADATA.NAME end
 
-    if (not type) or (type == "Print") then
-        QoLmods:Print(name, value)
-        return
+    if type(value) == "table" then
+        self:Table(value, name)
+        Addon:Print(name .. " is table - more info using /dev chat command (DevTool addon must be installed!)")
+    else
+        Addon:Print(name, value)
     end
+end
 
-    if (type == "VDT") and ViragDevTool_AddData then
-        ViragDevTool_AddData(value, Const.METADATA.NAME .. "_" .. name)
-        return
+function DEBUG:Table(value, name)
+    if not Addon.db.profile.Debug then return end
+    if not name then name = Const.METADATA.NAME end
+
+    if DevTool then
+        DevTool:AddData(value, Const.METADATA.NAME .. "_" .. name)
     end
-
 end
