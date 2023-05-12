@@ -1,9 +1,9 @@
-local QoLmods = select(2, ...)
+local Addon = select(2, ...)
 
 local DEBUG = {}
-QoLmods.DEBUG = DEBUG
+Addon.DEBUG = DEBUG
 
-local Const = QoLmods.CONST
+local Const = Addon.CONST
 
 function DEBUG:Info(value, name)
     if not Addon.db.profile.Debug then return end

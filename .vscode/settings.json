@@ -43,6 +43,7 @@
         "OpacitySliderFrame",
         "ChatFontNormal",
         "OKAY",
-        "NOT_BOUND"
+        "NOT_BOUND",
+        "Add"
     ]
 }
