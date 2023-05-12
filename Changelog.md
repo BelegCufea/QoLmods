@@ -1,7 +1,10 @@
-# v0.0.5 (12.5.2023)
+# v0.0.5 (4.5.2023)
+
+## Update
+- Bump TOC to 10.1
 
 ## Fix
-- Fix TimeToArrive fo 10.1 patch
+- Positioning of Time to arrive
 
 ## Misc
 - Moved debug from [ViragDevTool](https://www.curseforge.com/wow/addons/varrendevtool) to [DevTool](https://www.curseforge.com/wow/addons/devtool).
