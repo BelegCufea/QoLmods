@@ -1,3 +1,9 @@
+# v0.0.6 ()
+
+## Misc
+- Revert debug to [ViragDevTool](https://www.curseforge.com/wow/addons/varrendevtool) ([DevTool](https://www.curseforge.com/wow/addons/devtool) is still buggy!)
+- Revamped debug
+
 # v0.0.5 (4.5.2023)
 
 ## Update
