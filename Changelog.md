@@ -1,4 +1,9 @@
-# v0.0.6 ()
+# v0.0.7 (4.8.2024)
+
+## Added
+- Quick pick of TTS Voices
+
+# v0.0.6 (---)
 
 ## Misc
 - Revert debug to [ViragDevTool](https://www.curseforge.com/wow/addons/varrendevtool) ([DevTool](https://www.curseforge.com/wow/addons/devtool) is still buggy!)

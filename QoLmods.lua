@@ -9,11 +9,22 @@ local Debug = QoLmods.DEBUG
 
 QoLmods.defaults = {
     profile = {
-        enabled = true,
-        debug = false,
+        Enabled = true,
+        Debug = false,
         modules = {},
     },
 }
+
+local function getTTSVoices()
+    local voices = C_VoiceChat.GetTtsVoices()
+    local voiceOptions = {}
+    if voices then
+        for _, voice in ipairs(voices) do
+            voiceOptions[voice.voiceID] = voice.name
+        end
+    end
+    return voiceOptions
+end
 
 QoLmods.options = {
     type = "group",
@@ -39,6 +50,66 @@ QoLmods.options = {
 			width = "full",
             order = 2,
             hidden = true,
+        },
+        tts = {
+            type = "group",
+            name = "TTS Voices",
+            order = 3,
+            args ={
+                standard = {
+                    type = "select",
+                    name = "Standard",
+                    order = 10,
+                    width = "full",
+                    values = function()
+                        return getTTSVoices()
+                    end,
+                    get = function(info) return
+                        C_TTSSettings.GetVoiceOptionID(0)
+                    end,
+                    set = function(info, value)
+                        C_TTSSettings.SetVoiceOption(0, value)
+                    end,
+                    style = "dropdown",
+                },
+                standardTest = {
+                    type = "execute",
+                    name = "Test",
+                    order = 12,
+                    width = "half",
+                    func = function()
+                        local voiceID = C_TTSSettings.GetVoiceOptionID(0)
+                        C_VoiceChat.SpeakText(voiceID, "Standard Voice", Enum.VoiceTtsDestination.LocalPlayback, 0, 100)
+                    end
+                },
+                alternate = {
+                    type = "select",
+                    name = "Alternate",
+                    order = 20,
+                    width = "full",
+                    values = function()
+                        return getTTSVoices()
+                    end,
+                    get = function(info) return
+                        C_TTSSettings.GetVoiceOptionID(1)
+                    end,
+                    set = function(info, value)
+                        Debug:Info(value)
+                        C_TTSSettings.SetVoiceOption(1, value)
+                    end,
+                    style = "dropdown",
+                },
+                alternateTest = {
+                    type = "execute",
+                    name = "Test",
+                    order = 22,
+                    width = "half",
+                    func = function()
+                        local voiceID = C_TTSSettings.GetVoiceOptionID(1)
+                        C_VoiceChat.SpeakText(voiceID, "Alternate Voice", Enum.VoiceTtsDestination.LocalPlayback, 0, 100)
+                    end
+                }
+            },
         },
         modules = {
             type = "group",
