@@ -1,7 +1,7 @@
 ## Interface: 110000
 ## Title: QoL modules
 ## Notes: Simple quality of life modules
-## Version: 0.0.7
+## Version: 0.0.8
 ## Author: Cufea
 ## SavedVariables: QoLmodsDB
 ## DefaultState: enabled

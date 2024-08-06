@@ -1,3 +1,8 @@
+# v0.0.8 64.8.2024)
+
+## Added
+- More configuration for TTS Voices
+
 # v0.0.7 (4.8.2024)
 
 ## Added

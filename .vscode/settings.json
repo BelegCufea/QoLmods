@@ -44,6 +44,8 @@
         "ChatFontNormal",
         "OKAY",
         "NOT_BOUND",
-        "Add"
+        "Add",
+        "TEXTTOSPEECH_RATE_MIN",
+        "TEXTTOSPEECH_RATE_MAX"
     ]
 }

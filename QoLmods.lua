@@ -51,21 +51,65 @@ QoLmods.options = {
             order = 2,
             hidden = true,
         },
+        modules = {
+            type = "group",
+            name = "Modules",
+            order = 10,
+            args = {},
+        },
         tts = {
             type = "group",
             name = "TTS Voices",
-            order = 3,
+            order = 20,
             args ={
+                info = {
+                    type = "description",
+                    name = "These settings allow you to change the default WoW TTS voices otherwise available in the Accessibility section.",
+                    order = 0,
+                    width = "full",
+                    fontSize = "large",
+                },
+                blank1 = {
+                    type = "header",
+                    name = "",
+                    order = 1,
+                },
+                speed = {
+                    type = "range",
+                    name = "Rate of Speech",
+                    order = 6,
+                    min = TEXTTOSPEECH_RATE_MIN,
+                    max = TEXTTOSPEECH_RATE_MAX,
+                    get = function(info)
+                        return C_TTSSettings.GetSpeechRate()
+                    end,
+                    set = function(info, value)
+                        C_TTSSettings.SetSpeechRate(value)
+                    end,
+                },
+                valume = {
+                    type = "range",
+                    name = "Speech volume",
+                    order = 7,
+                    min = 0,
+                    max = 100,
+                    get = function(info)
+                        return C_TTSSettings.GetSpeechVolume()
+                    end,
+                    set = function(info, value)
+                        C_TTSSettings.SetSpeechVolume(value)
+                    end,
+                },
                 standard = {
                     type = "select",
-                    name = "Standard",
+                    name = "Standard voice",
                     order = 10,
                     width = "full",
                     values = function()
                         return getTTSVoices()
                     end,
-                    get = function(info) return
-                        C_TTSSettings.GetVoiceOptionID(0)
+                    get = function(info)
+                        return C_TTSSettings.GetVoiceOptionID(0)
                     end,
                     set = function(info, value)
                         C_TTSSettings.SetVoiceOption(0, value)
@@ -79,22 +123,23 @@ QoLmods.options = {
                     width = "half",
                     func = function()
                         local voiceID = C_TTSSettings.GetVoiceOptionID(0)
-                        C_VoiceChat.SpeakText(voiceID, "Standard Voice", Enum.VoiceTtsDestination.LocalPlayback, 0, 100)
+                        local rate = C_TTSSettings.GetSpeechRate()
+                        local volume = C_TTSSettings.GetSpeechVolume()
+                        C_VoiceChat.SpeakText(voiceID, "This is a test of standard voice.", Enum.VoiceTtsDestination.LocalPlayback, rate, volume)
                     end
                 },
                 alternate = {
                     type = "select",
-                    name = "Alternate",
+                    name = "Alternate voice",
                     order = 20,
                     width = "full",
                     values = function()
                         return getTTSVoices()
                     end,
-                    get = function(info) return
-                        C_TTSSettings.GetVoiceOptionID(1)
+                    get = function(info)
+                        return C_TTSSettings.GetVoiceOptionID(1)
                     end,
                     set = function(info, value)
-                        Debug:Info(value)
                         C_TTSSettings.SetVoiceOption(1, value)
                     end,
                     style = "dropdown",
@@ -106,17 +151,13 @@ QoLmods.options = {
                     width = "half",
                     func = function()
                         local voiceID = C_TTSSettings.GetVoiceOptionID(1)
-                        C_VoiceChat.SpeakText(voiceID, "Alternate Voice", Enum.VoiceTtsDestination.LocalPlayback, 0, 100)
+                        local rate = C_TTSSettings.GetSpeechRate()
+                        local volume = C_TTSSettings.GetSpeechVolume()
+                        C_VoiceChat.SpeakText(voiceID, "This is a test of alternate voice.", Enum.VoiceTtsDestination.LocalPlayback, rate, volume)
                     end
                 }
             },
         },
-        modules = {
-            type = "group",
-            name = "Modules",
-            order = 9,
-            args = {},
-        }
     },
 }
 
