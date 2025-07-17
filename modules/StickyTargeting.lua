@@ -4,7 +4,7 @@ local QoLmods = select(2, ...)
 local Module = QoLmods:NewModule(moduleName, "AceEvent-3.0")
 
 local function toggleSticky(event)
-    SetCVar("deselectOnClick", (event=="PLAYER_REGEN_DISABLED" and 0) or 1)
+    Settings.SetValue("deselectOnClick", event=="PLAYER_REGEN_DISABLED")
 end
 
 function Module:OnEnable()
